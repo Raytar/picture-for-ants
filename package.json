@@ -1,0 +1,15 @@
+{
+  "name": "picture-for-ants",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A discord bot that detects images for ants",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Ingve Olsen",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.1.0"
+  }
+}
