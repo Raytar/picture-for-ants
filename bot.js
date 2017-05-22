@@ -2,7 +2,7 @@ const discord = require('discord.js');
 const path = require('path');
 const fs = require('fs');
 
-const antSize = 150;
+const antSize = Math.pow(150, 2);
 const imageUrl = 'https://i.imgur.com/P7xP9K1.jpg';
 
 const config = JSON.parse(fs.readFileSync(path.join(__dirname, 'config.json'), 'utf8'));
@@ -17,8 +17,8 @@ bot.on('message', (message) => {
     let pictureForAnts = false;
 
     message.attachments.forEach((attachment) => {
-        if ((attachment.width && attachment.height) 
-            && (attachment.width < antSize && attachment.height < antSize)
+        if ((attachment.width && attachment.height)
+            && (attachment.width * attachment.height < antSize)
         ) {
             pictureForAnts = true;
         }
@@ -29,7 +29,7 @@ bot.on('message', (message) => {
             pictureForAnts = true;
         }
 */
-        if (embed.thumbnail && embed.thumbnail.width < antSize && embed.thumbnail.height < antSize) {
+        if (embed.thumbnail && embed.thumbnail.width * embed.thumbnail.height < antSize) {
             pictureForAnts = true;
         }
     });
